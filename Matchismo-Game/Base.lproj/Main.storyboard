@@ -137,10 +137,17 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YMW-q3-OgG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysw-iq-zo6">
+                                <rect key="frame" x="20" y="527" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="scoreLabel" destination="ysw-iq-zo6" id="0rn-LF-gZT"/>
                         <outletCollection property="cardButtons" destination="Sxz-9P-Duz" id="vbn-Yf-eEQ"/>
                         <outletCollection property="cardButtons" destination="hKU-GA-178" id="bUb-MF-XlI"/>
                         <outletCollection property="cardButtons" destination="due-6h-ty1" id="CE6-5K-oFF"/>

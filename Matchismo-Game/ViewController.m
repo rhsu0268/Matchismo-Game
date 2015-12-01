@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) CardMatchingGame *game;
 
+
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
@@ -42,10 +43,12 @@
 
 - (IBAction)touchCardButton:(UIButton *)sender {
     
-    int chosenButtonIndex = (int) [self.cardButtons indexOfObject:sender];
+    // get the card associated with the button
+    int cardIndex = (int) [self.cardButtons indexOfObject:sender];
     
-    [self.game chooseCardAtIndex:chosenButtonIndex];
+    [self.game chooseCardAtIndex:cardIndex];
     
+    // keep UI in sync with model
     [self updateUI];
     
 }

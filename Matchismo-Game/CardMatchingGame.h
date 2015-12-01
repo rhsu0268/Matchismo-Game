@@ -11,14 +11,16 @@
 
 @interface CardMatchingGame : NSObject
 
-// designated initializer
+// designated initializer - have to call it to initialize our class
 - (instancetype)initWithCardCount:(NSUInteger)count usingDeck: (Deck *)deck;
 
+// need to allow user to choose a card
 - (void)chooseCardAtIndex:(NSUInteger)index;
+
+// need to find out state of game
 - (Card *)cardAtIndex:(NSUInteger)index;
 
-
-// no setter for the property
+// want readonly publicly: no setter for the property
 @property (nonatomic, readonly) NSInteger score;
 
 @end

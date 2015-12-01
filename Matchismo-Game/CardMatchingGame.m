@@ -11,7 +11,8 @@
 
 @interface CardMatchingGame()
 
-// redeclare a readonly property
+// redeclare a readonly property from public to private
+// there is a setter - only setter in implementation
 @property (nonatomic, readwrite) NSInteger score;
 @property (nonatomic, strong) NSMutableArray *cards; // of Card
 
@@ -20,6 +21,7 @@
 
 @implementation CardMatchingGame
 
+// lazy instantiation
 - (NSMutableArray *)cards
 {
     if (!_cards)
@@ -37,6 +39,7 @@
     
     if (self)
     {
+        // pull the number of cards and put it in our data structure
         for (int i = 0; i < count; i++)
         {
             Card *card = [deck drawRandomCard];
@@ -77,6 +80,7 @@ static const int COST_TO_CHOOSE = 1;
             {
                 if (otherCard.isChosen && !otherCard.isMatched)
                 {
+                    // match the card
                     int matchScore = [card match:@[otherCard]];
                     if (matchScore)
                     {

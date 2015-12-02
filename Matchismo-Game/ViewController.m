@@ -57,10 +57,13 @@
 {
     for (UIButton *cardButton in self.cardButtons)
     {
+        // figure out which card it is
         int cardButtonIndex = (int) [self.cardButtons indexOfObject:cardButton];
         Card *card = [self.game cardAtIndex:cardButtonIndex];
         [cardButton setTitle:[self titleForCard:card] forState:(UIControlStateNormal)];
         [cardButton setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
+        
+        // button will be enabled only if not matched
         cardButton.enabled = !card.isMatched;
         self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", (int) self.game.score];
     }
